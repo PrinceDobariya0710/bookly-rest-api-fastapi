@@ -1,1 +1,4 @@
 fastapi[standard]
+pydantic-settings
+asyncpg
+sqlmodel
