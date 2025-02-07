@@ -2,3 +2,7 @@ fastapi[standard]
 pydantic-settings
 asyncpg
 sqlmodel
+alembic #for migration management
+passlib
+bcrypt
+pyjwt
