@@ -3,6 +3,8 @@ from sqlmodel import SQLModel, Field, Column
 import sqlalchemy.dialects.postgresql as pg
 import uuid
 
+from src.constants import USER_ROLE
+
 
 class User(SQLModel, table=True):
     __tablename__ = "users"
@@ -21,6 +23,7 @@ class User(SQLModel, table=True):
     username: str
     first_name: str = Field(nullable=True)
     last_name: str = Field(nullable=True)
+    role: str = Field(sa_column=Column(pg.VARCHAR,nullable=False, server_default=USER_ROLE))
     is_verified: bool = False
     email: str
     password_hash: str = Field(exclude=True)

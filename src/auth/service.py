@@ -3,6 +3,7 @@ from src.auth.models import User
 from sqlmodel import select
 from src.auth.utils import generate_password_hash, verify_password
 from src.auth.schemas import UserCreateModel
+from src.constants import USER_ROLE
 
 class UserService:
 
@@ -23,6 +24,7 @@ class UserService:
             **user_data_dict
         )
         new_user.password_hash = generate_password_hash(user_data_dict["password"])
+        new_user.role = USER_ROLE
         session.add(new_user)
 
         await session.commit()

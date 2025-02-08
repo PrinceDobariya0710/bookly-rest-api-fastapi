@@ -6,3 +6,5 @@ alembic #for migration management
 passlib
 bcrypt
 pyjwt
+hiredis
+redis>=4.2.0rc1
