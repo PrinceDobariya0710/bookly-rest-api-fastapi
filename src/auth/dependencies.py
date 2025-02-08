@@ -1,11 +1,11 @@
 from fastapi import Depends, HTTPException, Request,status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from src.auth.utils import decode_token
-from src.db.redis import add_jti_to_blocklist, token_in_blocklist
+from src.db.redis import token_in_blocklist
 from src.db.main import get_session
 from sqlmodel.ext.asyncio.session import AsyncSession
 from src.auth.service import UserService
-from src.auth.models import User
+from src.db.models import User
 from typing import List, Any
 
 user_service = UserService()
