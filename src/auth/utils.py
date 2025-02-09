@@ -1,5 +1,7 @@
 from datetime import datetime, timedelta
+from fastapi import HTTPException
 from passlib.context import CryptContext
+from itsdangerous import BadSignature, SignatureExpired, URLSafeTimedSerializer
 import jwt
 import uuid
 from src.config import Config
@@ -41,3 +43,25 @@ def decode_token(token:str)->dict:
     except jwt.PyJWKError as e:
         logging.exception(e)
         return None
+
+serializer = URLSafeTimedSerializer(
+    secret_key=Config.JWT_SECRET_KEY, salt="email-configuration"
+)
+def create_url_safe_token(data: dict) -> str:
+    """
+    Create a URL-safe token with an expiration time.
+    """
+    return serializer.dumps(data)
+
+def decode_url_safe_token(token: str, max_age=3600) -> dict:
+    """
+    Decode a URL-safe token and check for expiration.
+    """
+    try:
+        # Deserialize the token and check if it's expired
+        data = serializer.loads(token, max_age=max_age)
+        return data
+    except SignatureExpired:
+        raise HTTPException(status_code=400, detail="Token has expired")
+    except BadSignature:
+        raise HTTPException(status_code=400, detail="Invalid token")
