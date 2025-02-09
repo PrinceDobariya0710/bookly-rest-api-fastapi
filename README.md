@@ -81,3 +81,7 @@ DOMAIN="localhost:8000"
 ```bash
 pip freeze > build_requirements.txt
 ```
+
+# OpenAPI documentation screenshot
+![Project Screenshot](https://raw.githubusercontent.com/PrinceDobariya0710/bookly-rest-api-fastapi/refs/heads/main/screencapture-localhost-8000-api-v1-docs-2025-02-09-17_26_29.png)
+
