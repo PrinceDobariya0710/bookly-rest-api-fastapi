@@ -1,6 +1,27 @@
 # fastapi-learn
 Learning FastAPI and it's capabilities
 
+# Main Libraries and frameworks used for this project
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![SQLModel](https://img.shields.io/badge/SQLModel-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Celery](https://img.shields.io/badge/Celery-37814A?style=for-the-badge&logo=celery&logoColor=white)
+![Celery Flower](https://img.shields.io/badge/Celery_Flower-FFDD57?style=for-the-badge&logo=flower&logoColor=black)
+![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![Alembic](https://img.shields.io/badge/Alembic-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![NeonDB](https://img.shields.io/badge/NeonDB-000000?style=for-the-badge&logo=neondatabase&logoColor=white)
+
+# Create virtual environment
+```bash
+python3 -m venv venv
+```
+
+# Activate virtual environment for Windows
+```bash
+venv\Scripts\activate
+```
+
 # Run fastapi in development mode
 ```bash
 fastapi dev src
